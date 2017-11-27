@@ -1,0 +1,481 @@
+<head>
+    <title>This is my Page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="test.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <!-- <script src="https//code.jquery.com/ui/1.11.4/jquery-ui.js"></script> -->
+    
+  
+    <script>
+     $(document).ready(function() {
+   var images=new Array("./picture1.jpeg","./picture2.jpg","./picture3.jpg","./picture4.jpg");
+var nextimage=0;
+doSlideshow();
+
+
+function doSlideshow(){
+    if(nextimage>=images.length){nextimage=0;}
+    $('.containerStyle')
+    .css('background-image','url("'+images[nextimage++]+'")')
+    .fadeIn(500,function(){
+        setTimeout(doSlideshow,4000);
+    });
+}
+
+
+
+$('#checkBox').change(function () {
+        if (!this.checked) 
+        //  ^
+           $('#carDest').fadeOut('slow');
+        else 
+            $('#carDest').fadeIn('slow');
+    });
+// $("#datetimepickerButton1").click(function(event){
+//   event.preventDefault();
+//     $("#datepicker").datepicker();
+// });
+  
+});
+    
+  </script>
+    
+</head>
+
+    <div class="headerDiv">
+             <ul class="nav justify-content-end">
+                 <li class="nav-item">
+                   <a class="nav-link" href="#">Check In</a>
+                 </li>
+                 <li class="nav-item">
+                   <a class="nav-link" href="#">Customer Support</a>
+                 </li>
+                 <li class="nav-item">
+                   <a class="nav-link" href="#"></a>
+                 </li>
+                 <li class="nav-item">
+                   <a class="nav-link " href="#">INR</a>
+                 </li>
+                 <li class="nav-item">
+                     <a class="nav-link " href="#">Login/Signup</a>
+                   </li>
+               </ul>
+    </div>
+    <img src="airplane.png" class="imgStyle" alt="Cinque Terre">
+
+<body>
+ <div class="containerStyle  col-lg-12 col-md-12 col-sm-12">
+</div> 
+ <div class="formStyle col-lg-6 col-md-9 col-sm-12">
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item navStyle">
+          <a class="nav-link active" href="#plane" role="tab" data-toggle="tab">
+            <i class="fa fa-plane" aria-hidden="true"></i><br/>
+            Flight  
+          </a>
+        </li>
+        <li class="nav-item navStyle">
+          <a class="nav-link" href="#hotel" role="tab" data-toggle="tab">
+              <i class="fa fa-building" aria-hidden="true"></i><br/>
+              Hotel
+          </a>
+        </li>
+        <li class="nav-item navStyle">
+            <a class="nav-link" href="#hotelFlight" role="tab" data-toggle="tab">
+                <i class="fa fa-university" aria-hidden="true"></i><br/>
+                HotelFlight
+            </a>
+          </li>
+        <li class="nav-item navStyle">
+          <a class="nav-link" href="#car" role="tab" data-toggle="tab">
+           <i class="fa fa-car" aria-hidden="true"></i><br/>
+          Car
+        </a>
+        </li>
+        <li class="nav-item navStyle">
+            <a class="nav-link" href="#activity" role="tab" data-toggle="tab">
+              <i class="fa fa-industry" aria-hidden="true"></i><br/>
+            Activities
+          </a>
+          </li>
+      </ul>
+      
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <div role="tabpanel" class="tab-pane fade in active" id="plane">
+          <form>
+            <div class="input-group">
+            <input type="text" class="form-control formInputStyle" id="origin" placeholder="Origin">
+             <div class="input-group-addon buttonInputStyle">
+               <button class="btn btn-default" type="button" data-toggle="dropdown">
+                 <i class="fa fa-navicon form-control-feedback " aria-hidden="true"></i>
+              </button>
+              <ul class="dropdown-menu">
+                  <li><a href="#">Bangalore</a></li>
+                  <li><a href="#">UK</a></li>
+                  <li><a href="#">Canada</a></li>
+                </ul>
+             </div> 
+             </div>
+             <div class="input-group">
+                <input type="text" class="form-control formInputStyle" id="des" placeholder="Destination">
+                     <div class="input-group-addon buttonInputStyle">
+                      <button class="btn btn-default" type="button" data-toggle="dropdown">
+                        <i class="fa fa-navicon" aria-hidden="true"></i>
+                      </button>
+                      <ul class="dropdown-menu">
+                          <li><a href="#">Dubai</a></li>
+                          <li><a href="#">Bali</a></li>
+                          <li><a href="#">Singapore</a></li>
+                        </ul>
+                    </div> 
+              </div>
+              <div class="row">
+              <div class="col-lg-6 col-md-6 col-sm-6">
+                <div class="input-group date"> 
+                  <input type="text" class="form-control formInputStyle" id='datepicker' placeholder="From Date">
+                       <div class="input-group-addon buttonInputStyle">
+                        <button class="btn btn-default" type="button" id='datetimepickerButton1'>
+                          <i class="fa fa-edit" aria-hidden="true"></i>
+                        </button>
+                      </div> 
+                  </div>
+                </div>
+              <div class="col-lg-6 col-md-6 col-sm-6">
+                <div class="input-group">
+                    <input type="text" class="form-control formInputStyle" id='datetimepicker2' placeholder="Return Date">
+                         <div class="input-group-addon buttonInputStyle">
+                          <button class="btn btn-default" type="button">
+                            <i class="fa fa-edit" aria-hidden="true"></i>
+                          </button>
+                        </div> 
+                </div>
+              </div>
+            </div>
+          <div class="row">
+          <div class="col-lg-8 col-md-8 col-sm-8">
+            <div class="dropdown input-group">
+                <input class="form-control formInputStyle"   placeholder="Guests">
+                <div class="input-group-addon buttonInputStyle">                    
+                <button class="dropdown-toggle" type="button"data-toggle="dropdown">
+                    
+                </button>
+               
+                <ul class="dropdown-menu">
+                  <li><a href="#">Adult</a></li>
+                  <li><a href="#">Children</a></li>
+                  <li><a href="#">Infants</a></li>
+                </ul>
+                </div>
+              </div> 
+            </div>
+              <div class="col-lg-4 col-md-4 col-sm-4" >
+                  <input class="form-control formInputStyle promoStyle"  placeholder="Promocode">
+              </div>
+           
+          </div>
+          <div class="text-center">
+            <button type="button" class="btn btn-danger searchStyle">
+              Search
+            </button>
+          </div>
+         </form>   
+          </div>
+
+       
+       
+          <div role="tabpanel" class="tab-pane fade" id="hotel">
+
+            <form>
+                <div class="input-group">
+                <input type="text" class="form-control formInputStyle" id="origin" placeholder="Origin">
+                 <div class="input-group-addon buttonInputStyle">
+                   <button class="btn btn-default" type="button" data-toggle="dropdown">
+                     <i class="fa fa-navicon form-control-feedback " aria-hidden="true"></i>
+                  </button>
+                  <ul class="dropdown-menu">
+                      <li><a href="#">Bangalore</a></li>
+                      <li><a href="#">UK</a></li>
+                      <li><a href="#">Canada</a></li>
+                    </ul>
+                 </div> 
+                 </div>
+                  <div class="row">
+                  <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="input-group date"> 
+                      <input type="text" class="form-control formInputStyle" id='datepicker' placeholder="From Date">
+                           <div class="input-group-addon buttonInputStyle">
+                            <button class="btn btn-default" type="button" id='datetimepickerButton1'>
+                              <i class="fa fa-edit" aria-hidden="true"></i>
+                            </button>
+                          </div> 
+                      </div>
+                    </div>
+                  <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="input-group">
+                        <input type="text" class="form-control formInputStyle" id='datetimepicker2' placeholder="Return Date">
+                             <div class="input-group-addon buttonInputStyle">
+                              <button class="btn btn-default" type="button">
+                                <i class="fa fa-edit" aria-hidden="true"></i>
+                              </button>
+                            </div> 
+                    </div>
+                  </div>
+                </div>
+                <div class="input-group">
+                    <input type="text" class="form-control formInputStyle" id="room" placeholder="Room">
+                         <div class="input-group-addon buttonInputStyle">
+                          <button class="btn btn-default" type="button" data-toggle="dropdown">
+                            <i class="fa fa-hotel" aria-hidden="true"></i>
+                          </button>
+                        </div> 
+                  </div>  
+            <div class="row">
+              <div class="col-lg-8 col-md-8 col-sm-8">
+                <div class="dropdown input-group">
+                    <input class="form-control formInputStyle"   placeholder="Guests">
+                    <div class="input-group-addon buttonInputStyle">                    
+                    <button class="dropdown-toggle" type="button"data-toggle="dropdown">
+                        
+                    </button>
+                   
+                    <ul class="dropdown-menu">
+                      <li><a href="#">Adult</a></li>
+                      <li><a href="#">Children</a></li>
+                      <li><a href="#">Infants</a></li>
+                    </ul>
+                    </div>
+                  </div> 
+                </div>
+                  <div class="col-lg-4 col-md-4 col-sm-4" >
+                      <input class=" formInputStyle promoStyle"  placeholder="Promocode">
+                  </div>
+               
+              </div>
+              <div class="text-center">
+                <button type="button" class="btn btn-danger searchStyle">
+                  Search
+                </button>
+              </div>
+            </form>   
+
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="hotelFlight">
+
+            <form>
+                <div class="input-group">
+                <input type="text" class="form-control formInputStyle" id="originHotel" placeholder="Origin">
+                 <div class="input-group-addon buttonInputStyle">
+                   <button class="btn btn-default" type="button" data-toggle="dropdown">
+                     <i class="fa fa-navicon form-control-feedback " aria-hidden="true"></i>
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">Bangalore</a></li>
+                    <li><a href="#">UK</a></li>
+                    <li><a href="#">Canada</a></li>
+                    </ul>
+                 </div> 
+                 </div>
+                 <div class="input-group"id="showReturn">
+                    <input type="text" class="form-control formInputStyle" id="desCar" placeholder="Destination">
+                         <div class="input-group-addon buttonInputStyle">
+                          <button class="btn btn-default" type="button" data-toggle="dropdown">
+                            <i class="fa fa-navicon" aria-hidden="true"></i>
+                          </button>
+                          <ul class="dropdown-menu">
+                            <li><a href="#">Bangalore</a></li>
+                            <li><a href="#">UK</a></li>
+                            <li><a href="#">Canada</a></li>
+                            </ul>
+                        </div> 
+                  </div>
+                  
+                  
+                  <div class="row">
+                  <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="input-group"> 
+                      <input type="text" class="form-control formInputStyle" id='datepicker' placeholder="From Date">
+                           <div class="input-group-addon buttonInputStyle">
+                            <button class="btn btn-default" type="button" id='datetimepickerButton1'>
+                              <i class="fa fa-edit" aria-hidden="true"></i>
+                            </button>
+                          </div> 
+                      </div>
+                    </div>
+                  <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="input-group">
+                        <input type="text" class="form-control formInputStyle" id='datetimepicker2' placeholder="Return Date">
+                             <div class="input-group-addon buttonInputStyle">
+                              <button class="btn btn-default" type="button">
+                                <i class="fa fa-edit" aria-hidden="true"></i>
+                              </button>
+                            </div> 
+                    </div>
+                  </div>
+                </div>
+            <div class="row">
+              <div class="col-lg-8 col-md-8 col-sm-8">
+                <div class="dropdown input-group">
+                    <input class="form-control formInputStyle"   placeholder="Guests">
+                    <div class="input-group-addon buttonInputStyle">                    
+                    <button class="dropdown-toggle" type="button"data-toggle="dropdown">
+                        
+                    </button>
+                   
+                    <ul class="dropdown-menu">
+                      <li><a href="#">Adult</a></li>
+                      <li><a href="#">Children</a></li>
+                      <li><a href="#">Infants</a></li>
+                    </ul>
+                    </div>
+                  </div> 
+                </div>
+                  <div class="col-lg-4 col-md-4 col-sm-4" >
+                      <input class="form-control formInputStyle promoStyle"  placeholder="Promocode">
+                  </div>
+               
+              </div>
+              <div class="text-center">
+                <button type="button" class="btn btn-danger searchStyle">
+                  Search
+                </button>
+              </div>
+            </form>   
+         </div>
+        
+         <div role="tabpanel" class="tab-pane fade" id="car">
+            <form>
+                <div class="input-group">
+                <input type="text" class="form-control formInputStyle" id="origin" placeholder="City,airport,address,station..">
+                 <div class="input-group-addon buttonInputStyle">
+                   <button class="btn btn-default" type="button" data-toggle="dropdown">
+                     <i class="fa fa-navicon form-control-feedback " aria-hidden="true"></i>
+                  </button>
+                  <ul class="dropdown-menu ">
+                      <li><a href="#">Mall</a></li>
+                      <li><a href="#">Museum</a></li>
+                      <li><a href="#">Airport</a></li>
+                    </ul>
+                 </div> 
+                 </div>
+                 <div class="input-group" id="carDest" style="display: none">
+                    <input type="text" class="form-control formInputStyle" id="des" placeholder="Return Address">
+                         <div class="input-group-addon buttonInputStyle">
+                          <button class="btn btn-default" type="button" data-toggle="dropdown">
+                            <i class="fa fa-navicon" aria-hidden="true"></i>
+                          </button>
+                          <ul class="dropdown-menu">
+                            <li><a href="#">Mall</a></li>
+                            <li><a href="#">Museum</a></li>
+                            <li><a href="#">Airport</a></li>
+                          </ul>
+                        </div> 
+                  </div>
+                 <div class="checkBoxStyle">
+                      <input type="checkbox" value="checkBox" id="checkBox" name="checkBox"> Please select if you want to enter Return Address
+                 </div>
+                  <div class="row">
+                  <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="input-group"> 
+                      <input type="text" class="form-control formInputStyle" id='datepicker' placeholder="Start Date" readonly="true">
+                           <div class="input-group-addon buttonInputStyle">
+                            <button class="btn btn-default" type="button" id='datetimepickerButton1'>
+                              <i class="fa fa-edit" aria-hidden="true"></i>
+                            </button>
+                          </div> 
+                      </div>
+                    </div>
+                  <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="dropdown dropdownStyle">
+                      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                       10:00 AM
+                      </button>
+                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">12:00 PM</a>
+                        <a class="dropdown-item" href="#">14:00 PM</a>
+                        <a class="dropdown-item" href="#">16:00 AM</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="input-group"> 
+                      <input type="text" class="form-control formInputStyle" id='datepicker' placeholder="End Date" readonly="true">
+                           <div class="input-group-addon buttonInputStyle">
+                            <button class="btn btn-default" type="button" id='datetimepickerButton1'>
+                              <i class="fa fa-edit" aria-hidden="true"></i>
+                            </button>
+                          </div> 
+                      </div>
+                    </div>
+                  <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="dropdown dropdownStyle">
+                      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                       10:00 AM
+                      </button>
+                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">12:00 PM</a>
+                        <a class="dropdown-item" href="#">14:00 PM</a>
+                        <a class="dropdown-item" href="#">16:00 AM</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <div class="text-center">
+                <button type="button" class="btn btn-danger searchStyle">
+                  Search
+                </button>
+              </div>
+            </form>   
+
+         </div>
+       
+         <div role="tabpanel" class="tab-pane fade" id="activity">
+          <div class="input-group">
+            <input type="text" class="form-control formInputStyle" id="origin" placeholder="Destination">
+             <div class="input-group-addon buttonInputStyle">
+               <button class="btn btn-default" type="button" data-toggle="dropdown">
+                 <i class="fa fa-navicon" aria-hidden="true"></i>
+              </button>
+              <ul class="dropdown-menu ">
+                  <li><a href="#">Mall</a></li>
+                  <li><a href="#">Museum</a></li>
+                  <li><a href="#">Airport</a></li>
+                </ul>
+             </div> 
+             </div>
+             <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                  <div class="input-group"> 
+                    <input type="text" class="form-control formInputStyle" id='datepicker' placeholder="Start Date">                
+                    </div>
+                  </div>
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                  <div class="input-group">
+                      <input type="text" class="form-control formInputStyle" id='datetimepicker2' placeholder="End Date">
+                  </div>
+                </div>
+              </div>
+              <div class="text-center">
+                  <button type="button" class="btn btn-danger searchStyle">
+                    Search
+                  </button>
+                </div>
+         </div>
+      </div>
+    </div>
+     
+    
+        
+</body>
+<footer>
+    
+ </footer>
